@@ -9,7 +9,7 @@ const Comment = require('./models/Comment.js');
 const uri = process.env.MONGODB_URI;
 
 mongoose
-  .connect(uri, { dbName: 'klopp' })
+  .connect(uri)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
