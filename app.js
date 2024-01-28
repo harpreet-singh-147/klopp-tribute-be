@@ -6,14 +6,13 @@ const mongoose = require('mongoose');
 
 const Comment = require('./models/Comment.js');
 
+const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 
 mongoose
   .connect(uri)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
-
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
