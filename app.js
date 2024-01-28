@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -14,6 +15,7 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/comments', async (req, res) => {
